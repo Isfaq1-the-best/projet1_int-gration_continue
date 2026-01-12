@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Boutique Gaming - Laptops</title>
+
+  <!-- CSS (séparé) -->
+  <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#" aria-label="Accueil">
+        <span class="brand-mark">⚡</span>
+        <span class="brand-name">GamingStore</span>
+      </a>
+
+      <nav class="nav">
+        <a href="#produits">Produits</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <button class="cart-button" id="cartOpenBtn" type="button" aria-label="Ouvrir le panier">
+        🛒 <span class="cart-count" id="cartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>PC portables gaming & performance</h1>
+        <p>
+          Une mini-boutique prête à brancher sur ton CSS/JS.
+          Ajoute au panier, filtre, et finalise une commande (démo).
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#produits">Voir le catalogue</a>
+          <button class="btn btn-ghost" id="clearCartBtn" type="button">Vider le panier</button>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-card-title">Livraison & paiement</div>
+        <ul class="hero-bullets">
+          <li>✅ Paiement à la livraison (exemple)</li>
+          <li>✅ Garantie 12 mois (exemple)</li>
+          <li>✅ Support WhatsApp (exemple)</li>
+        </ul>
+        <small class="muted">* Remplace ces infos par les tiennes.</small>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toolbar -->
+  <section class="toolbar">
+    <div class="container toolbar-inner">
+      <div class="field">
+        <label for="searchInput">Recherche</label>
+        <input id="searchInput" type="search" placeholder="Ex: Legion, ROG, MSI..." autocomplete="off" />
+      </div>
+
+      <div class="field">
+        <label for="sortSelect">Trier</label>
+        <select id="sortSelect">
+          <option value="featured">En vedette</option>
+          <option value="price_asc">Prix croissant</option>
+          <option value="price_desc">Prix décroissant</option>
+          <option value="name_asc">Nom A → Z</option>
+          <option value="name_desc">Nom Z → A</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="maxPrice">Prix max</label>
+        <input id="maxPrice" type="number" min="0" step="50" placeholder="Ex: 1500" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <main class="container" id="produits">
+    <div class="section-head">
+      <h2>Catalogue</h2>
+      <p class="muted">Clique sur “Ajouter” pour remplir le panier.</p>
+    </div>
+
+    <div class="grid" id="productGrid" aria-live="polite">
+      <!-- Produit 1 -->
+      <article class="card product"
+        data-id="legion-01"
+        data-name="Lenovo Legion"
+        data-price="1299"
+        data-brand="Lenovo"
+      >
+        <div class="card-media">
+          <!-- Remplace le chemin si besoin -->
+          <img src="assets/img/legion.webp" alt="Lenovo Legion - laptop gaming" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Lenovo Legion</h3>
+          <p class="card-desc">Laptop gaming puissant, design sobre, refroidissement optimisé.</p>
+          <div class="card-meta">
+            <span class="price">1 299 €</span>
+            <span class="tag">Lenovo</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary add-to-cart" type="button">Ajouter</button>
+          <button class="btn btn-ghost quick-view" type="button">Détails</button>
+        </div>
+      </article>
+
+      <!-- Produit 2 -->
+      <article class="card product"
+        data-id="rog-01"
+        data-name="ASUS ROG Strix"
+        data-price="1599"
+        data-brand="ASUS"
+      >
+        <div class="card-media">
+          <img src="assets/img/asus_rog_strix_scar.webp" alt="ASUS ROG Strix - laptop gaming" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">ASUS ROG Strix</h3>
+          <p class="card-desc">Performance extrême, RGB, idéal pour FPS & création.</p>
+          <div class="card-meta">
+            <span class="price">1 599 €</span>
+            <span class="tag">ASUS</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary add-to-cart" type="button">Ajouter</button>
+          <button class="btn btn-ghost quick-view" type="button">Détails</button>
+        </div>
+      </article>
+
+      <!-- Produit 3 -->
+      <article class="card product"
+        data-id="tuf-01"
+        data-name="ASUS TUF"
+        data-price="1099"
+        data-brand="ASUS"
+      >
+        <div class="card-media">
+          <img src="assets/img/asus_tuf.webp" alt="ASUS TUF - laptop gaming" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">ASUS TUF</h3>
+          <p class="card-desc">Robuste, bon rapport qualité/prix, parfait pour débuter.</p>
+          <div class="card-meta">
+            <span class="price">1 099 €</span>
+            <span class="tag">ASUS</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary add-to-cart" type="button">Ajouter</button>
+          <button class="btn btn-ghost quick-view" type="button">Détails</button>
+        </div>
+      </article>
+
+      <!-- Produit 4 -->
+      <article class="card product"
+        data-id="msi-crosshair-01"
+        data-name="MSI Crosshair"
+        data-price="1199"
+        data-brand="MSI"
+      >
+        <div class="card-media">
+          <img src="assets/img/msi_crosshair.jpg" alt="MSI Crosshair - laptop gaming" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">MSI Crosshair</h3>
+          <p class="card-desc">Polyvalent gaming, écran immersif, clavier confortable.</p>
+          <div class="card-meta">
+            <span class="price">1 199 €</span>
+            <span class="tag">MSI</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary add-to-cart" type="button">Ajouter</button>
+          <button class="btn btn-ghost quick-view" type="button">Détails</button>
+        </div>
+      </article>
+
+      <!-- Produit 5 -->
+      <article class="card product"
+        data-id="msi-titan-01"
+        data-name="MSI Titan"
+        data-price="2499"
+        data-brand="MSI"
+      >
+        <div class="card-media">
+          <img src="assets/img/msi_titan.webp" alt="MSI Titan - laptop gaming" loading="lazy" />
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">MSI Titan</h3>
+          <p class="card-desc">Très haut de gamme, idéal rendu 3D, streaming et AAA.</p>
+          <div class="card-meta">
+            <span class="price">2 499 €</span>
+            <span class="tag">MSI</span>
+          </div>
+        </div>
+        <div class="card-actions">
+          <button class="btn btn-primary add-to-cart" type="button">Ajouter</button>
+          <button class="btn btn-ghost quick-view" type="button">Détails</button>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p class="muted">Section exemple (tu peux la remplacer).</p>
+      </div>
+
+      <details class="faq-item">
+        <summary>Comment passer commande ?</summary>
+        <p>Ajoute au panier, puis clique sur “Commander” dans le panier (démo).</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Livrez-vous au Burkina Faso ?</summary>
+        <p>Oui (exemple). Mets ici tes zones et délais réels.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <footer class="site-footer" id="contact">
+    <div class="container footer-inner">
+      <div>
+        <div class="brand small">
+          <span class="brand-mark">⚡</span>
+          <span class="brand-name">GamingStore</span>
+        </div>
+        <p class="muted">© <span id="year"></span> — Tous droits réservés.</p>
+      </div>
+
+      <div class="footer-links">
+        <a href="#">Conditions</a>
+        <a href="#">Politique de retour</a>
+        <a href="#">WhatsApp</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer" aria-hidden="true">
+    <div class="cart-panel" role="dialog" aria-modal="true" aria-label="Panier">
+      <div class="cart-header">
+        <h3>Ton panier</h3>
+        <button class="icon-btn" id="cartCloseBtn" type="button" aria-label="Fermer">✕</button>
+      </div>
+
+      <div class="cart-body" id="cartItems">
+        <!-- Injecté par JS -->
+      </div>
+
+      <div class="cart-footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <strong id="cartTotal">0 €</strong>
+        </div>
+
+        <button class="btn btn-primary w-full" id="checkoutBtn" type="button">
+          Commander (démo)
+        </button>
+        <small class="muted">* Ceci est une démo front-end (pas de paiement réel).</small>
+      </div>
+    </div>
+    <div class="cart-backdrop" id="cartBackdrop" tabindex="-1" aria-label="Fermer le panier"></div>
+  </aside>
+
+  <!-- Modal Quick View -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-label="Détails produit">
+      <div class="modal-header">
+        <h3 id="modalTitle">Produit</h3>
+        <button class="icon-btn" id="modalCloseBtn" type="button" aria-label="Fermer">✕</button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImg" alt="" />
+        <p id="modalDesc" class="muted"></p>
+        <div class="modal-row">
+          <strong id="modalPrice"></strong>
+          <button class="btn btn-primary" id="modalAddBtn" type="button">Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-backdrop" id="modalBackdrop" tabindex="-1" aria-label="Fermer"></div>
+  </div>
+
+  <!-- JS (séparé) -->
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
